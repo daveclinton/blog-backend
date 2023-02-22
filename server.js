@@ -8,7 +8,7 @@ dbConnect();
 // server
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, 5000, console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, 5000, console.log(`Server running on port ${PORT}`));
 
 // MongoDB Password
 // username ` dave`
