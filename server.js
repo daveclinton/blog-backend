@@ -9,6 +9,24 @@ const app = express();
 // DB
 dbConnect();
 
+// Register
+app.post("api/user/register", (req, res) => {
+  // bussiness logic
+  res.json({ user: "User Registered" });
+});
+
+// Login
+app.post("api/user/login", (req, res) => {
+  // bussiness logic
+  res.json({ user: "User Logged On" });
+});
+
+// fetch all users
+app.get("api/user", (req, res) => {
+  // bussiness logic
+  res.json({ user: "Fetch all users" });
+});
+
 // server
 const PORT = process.env.PORT || 5000;
 
