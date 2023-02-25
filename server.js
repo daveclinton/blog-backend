@@ -10,19 +10,19 @@ const app = express();
 dbConnect();
 
 // Register
-app.post("api/user/register", (req, res) => {
+app.post("/api/users/register", (req, res) => {
   // bussiness logic
   res.json({ user: "User Registered" });
 });
 
 // Login
-app.post("api/user/login", (req, res) => {
+app.post("/api/users/login", (req, res) => {
   // bussiness logic
   res.json({ user: "User Logged On" });
 });
 
 // fetch all users
-app.get("api/user", (req, res) => {
+app.get("/api/users", (req, res) => {
   // bussiness logic
   res.json({ user: "Fetch all users" });
 });
