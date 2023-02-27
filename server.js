@@ -11,10 +11,7 @@ const app = express();
 dbConnect();
 
 // Register
-app.post("/api/users/register", (req, res) => {
-  // bussiness logic
-  res.json({ user: "User Registered" });
-});
+app.post("/api/users/register", userRegisterController);
 
 // Login
 app.post("/api/users/login", (req, res) => {
