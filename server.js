@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const dbConnect = require("./config/db/dbConnect");
+const { userRegisterController } = require("./controllers/user/userController");
 
 const app = express();
 // DB
