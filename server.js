@@ -10,6 +10,9 @@ const app = express();
 // DB
 dbConnect();
 
+// Middleware
+app.use(express.json());
+
 // Register
 app.post("/api/users/register", userRegisterController);
 
