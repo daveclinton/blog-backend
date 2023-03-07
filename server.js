@@ -13,6 +13,15 @@ dbConnect();
 // Middleware
 app.use(express.json());
 
+// custom middleware
+const logger = (req, res, next) => {
+  console.log("Am a logger");
+  next();
+};
+
+// Usage
+
+app.use(logger);
 // Register
 app.post("/api/users/register", userRegisterController);
 
