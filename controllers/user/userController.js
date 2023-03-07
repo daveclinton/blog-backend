@@ -1,19 +1,42 @@
 const User = require("../../models/user/User");
 
 // Register a new user
-
 const userRegisterController = async (req, res) => {
+  console.log(req.body);
+  // Check if required fields are present in request body
+  if (
+    !req?.body?.firstName ||
+    !req?.body?.lastName ||
+    !req?.body?.email ||
+    !req?.body?.password
+  ) {
+    return res
+      .status(400)
+      .json({ error: "Please provide all required fields" });
+  }
+
   try {
-    // business logic
+    // Create a new user
     const user = await User.create({
-      firstName: "David",
-      lastName: "Clinton",
-      email: "david@example.com",
-      password: "123456789",
+      firstName: req?.body?.firstName,
+      lastName: req?.body?.lastName,
+      email: req?.body?.email,
+      password: req?.body?.password,
     });
+
+    // Send response containing the new user object
     res.json(user);
   } catch (error) {
-    res.json({ message: "An error occurred while registering the user" });
+    // If an error occurs, check if it is a validation error
+    if (error.name === "ValidationError") {
+      // If it is a validation error, send a 400 (Bad Request) response with the error message
+      return res.status(400).json({ error: error.message });
+    }
+
+    // If it is not a validation error, send a generic error response
+    res
+      .status(500)
+      .json({ error: "An error occurred while creating a new user" });
   }
 };
 
