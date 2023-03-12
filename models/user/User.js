@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 // create schema
 
@@ -63,6 +64,14 @@ const userSchema = new mongoose.Schema(
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true }, timeStamps: true }
 );
+
+// Hashing Password
+
+userSchema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
 
 // compile Schema into model
 const User = mongoose.model("User", userSchema);
