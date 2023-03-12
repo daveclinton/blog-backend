@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const dbConnect = require("./config/db/dbConnect");
-const { userRegisterController } = require("./controllers/user/userController");
+const userRoutes = require("./route/users/usersRoutes");
 
 const app = express();
 // DB
@@ -22,8 +22,8 @@ const logger = (req, res, next) => {
 // Usage
 
 app.use(logger);
-// Register
-app.post("/api/users/register", userRegisterController);
+// Users Route
+app.use("/api/users", userRoutes);
 
 // Login
 app.post("/api/users/login", (req, res) => {

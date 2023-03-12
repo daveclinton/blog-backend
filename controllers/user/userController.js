@@ -14,11 +14,11 @@ const userRegisterController = async (req, res) => {
       .json({ error: "Please provide all required fields" });
   }
   // Check if user already exists
-  const userExists = await User.find({ email: req?.body?.email });
+  // const userExists = await User.find({ email: req?.body?.email });
 
-  if (userExists) {
-    return res.json({ error: "User already exists" });
-  }
+  // if (userExists) {
+  //   return res.json({ error: "User already exists" });
+  // }
 
   try {
     // Create a new user
