@@ -2,7 +2,6 @@ const User = require("../../models/user/User");
 
 // Register a new user
 const userRegisterController = async (req, res) => {
-  console.log(req.body);
   // Check if required fields are present in request body
   if (
     !req?.body?.firstName ||
@@ -13,6 +12,12 @@ const userRegisterController = async (req, res) => {
     return res
       .status(400)
       .json({ error: "Please provide all required fields" });
+  }
+  // Check if user already exists
+  const userExists = await User.find({ email: req?.body?.email });
+
+  if (userExists) {
+    return res.json({ error: "User already exists" });
   }
 
   try {
