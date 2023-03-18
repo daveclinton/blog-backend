@@ -13,12 +13,6 @@ const userRegisterController = async (req, res) => {
       .status(400)
       .json({ error: "Please provide all required fields" });
   }
-  // Check if user already exists
-  // const userExists = await User.find({ email: req?.body?.email });
-
-  // if (userExists) {
-  //   return res.json({ error: "User already exists" });
-  // }
 
   try {
     // Create a new user
