@@ -1,19 +1,30 @@
 {
   "name": "blog-backend",
-  "version": "1.0.0",
-  "description": "Blog Application",
-  "main": "server.js",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "author": "david",
-  "license": "ISC",
+  "devDependencies": {},
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^6.9.2",
-    "nodemon": "^2.0.20"
-  }
+    "@strapi/strapi": "4.11.1",
+    "@strapi/plugin-users-permissions": "4.11.1",
+    "@strapi/plugin-i18n": "4.11.1",
+    "better-sqlite3": "8.0.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "ee0e97d9-9ec6-4ed3-862e-1db27a10d641"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
