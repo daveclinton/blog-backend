@@ -7,11 +7,11 @@ module.exports = ({ env }) => {
     postgres: {
       connection: {
         connectionString: env("DATABASE_URL"),
-        host: env("DATABASE_HOST", "localhost"),
+        host: env("DATABASE_HOST", "dpg-ci9iab98g3ne2ek23lmg-a"),
         port: env.int("DATABASE_PORT", 5432),
         database: env("DATABASE_NAME", "portfolio_blog"),
         user: env("DATABASE_USERNAME", "daveclinton"),
-        password: env("DATABASE_PASSWORD", "@Password1234"),
+        password: env("DATABASE_PASSWORD", "afkaea2vNxlv75mij939z4lb8Uto7NXk"),
         ssl: env.bool("DATABASE_SSL", false) && {
           key: env("DATABASE_SSL_KEY", undefined),
           cert: env("DATABASE_SSL_CERT", undefined),
