@@ -23,6 +23,9 @@
     },
     "tag": {
       "type": "string"
+    },
+    "articleLink": {
+      "type": "string"
     }
   }
 }
