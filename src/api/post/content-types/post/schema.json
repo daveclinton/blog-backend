@@ -28,7 +28,7 @@
       "type": "richtext"
     },
     "subTitle": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "slug": {
