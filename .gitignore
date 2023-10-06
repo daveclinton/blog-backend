@@ -99,6 +99,7 @@ node_modules
 # Tests
 ############################
 
+testApp
 coverage
 
 ############################
@@ -106,6 +107,7 @@ coverage
 ############################
 
 .env
+.env.production
 license.txt
 exports
 *.cache

@@ -12,6 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "private": true,
+      "mappedBy": "category"
+    },
     "title": {
       "type": "string",
       "required": true
@@ -19,23 +26,14 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "slug": {
       "type": "string",
       "required": true
-    },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "category"
     }
   }
 }
